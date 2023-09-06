@@ -8,7 +8,7 @@
 # Nimf with libhangul-3beol. Based on nimf-1.3.1.3da51ab
 # https://github.com/hamonikr/nimf
 # https://gitlab.com/3beol/nimf
-pkgname=nimf-git
+pkgname=nimf-3beol
 pkgver=r1056.6e6b4d3
 pkgrel=1
 pkgdesc="Nimf is a lightweight, fast and extensible input method framework."
@@ -16,17 +16,17 @@ arch=('any')
 url="https://github.com/delvier/nimf"
 license=('LGPL3')
 depends=(
-         'glibc'
-         'gtk3'
-         'glib2'
-         'libhangul-3beol'
-         'libappindicator-gtk3'
-         'libxkbcommon>=0.5.0'
-         'libxklavier'
-         'qt5-base'
-         'wayland')
+        'glibc'
+        'gtk3'
+        'glib2'
+        'libhangul-3beol'
+        'libappindicator-gtk3'
+        'libxkbcommon>=0.5.0'
+        'libxklavier'
+        'qt5-base'
+        'wayland')
 makedepends=(
-    'git'
+        'git'
         'gcc'
         'intltool'
         'gtk-doc'
@@ -38,11 +38,11 @@ makedepends=(
 )
 conflicts=("nimf" "nimf-git")
 provides=("nimf")
-source=( "nimf::git+${url}.git" )
+source=( "$pkgname"::"git+${url}.git" )
 md5sums=('SKIP' )
 
 pkgver() {
-        cd "$srcdir/nimf"
+        cd "$srcdir/nimf-3beol"
         printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
 }
 
@@ -62,13 +62,13 @@ post_upgrade() {
         post_install $1
 }
 build() {
-        cd "$srcdir/nimf"
+        cd "$srcdir/nimf-3beol"
         ./autogen.sh --prefix=/usr
         make
 }
 
 package() {
-    rm -rf $srcdir/../nimf
-        cd "$srcdir/nimf"
+        rm -rf $srcdir/../nimf-3beol
+        cd "$srcdir/nimf-3beol"
         make DESTDIR="${pkgdir}/" install
 }
