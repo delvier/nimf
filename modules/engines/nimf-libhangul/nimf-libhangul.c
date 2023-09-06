@@ -861,7 +861,7 @@ nimf_libhangul_get_method_infos ()
   g_debug (G_STRLOC ": %s", G_STRFUNC);
 
   NimfMethodInfo **infos;
-  gint             n_methods = G_N_ELEMENTS (keyboards);
+  gint             n_methods = hangul_keyboard_list_get_count();
   gint             i;
 
   infos = g_malloc (sizeof (NimfMethodInfo *) * n_methods + 1);
@@ -869,8 +869,8 @@ nimf_libhangul_get_method_infos ()
   for (i = 0; i < n_methods; i++)
   {
     infos[i] = nimf_method_info_new ();
-    infos[i]->method_id = g_strdup (keyboards[i].id);
-    infos[i]->label     = g_strdup (gettext (keyboards[i].name));
+    infos[i]->method_id = g_strdup (hangul_keyboard_list_get_keyboard_id(i));
+    infos[i]->label     = g_strdup (gettext (hangul_keyboard_list_get_keyboard_name(i)));
     infos[i]->group     = NULL;
   }
 
