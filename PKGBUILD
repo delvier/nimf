@@ -8,8 +8,8 @@
 # Nimf with libhangul-3beol. Based on nimf-1.3.1.3da51ab
 # https://github.com/hamonikr/nimf
 # https://gitlab.com/3beol/nimf
-pkgname=nimf-3beol
-pkgver=r1055.e57f046
+pkgname=nimf-git
+pkgver=r1056.6e6b4d3
 pkgrel=1
 pkgdesc="Nimf is a lightweight, fast and extensible input method framework."
 arch=('any')
