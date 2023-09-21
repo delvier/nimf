@@ -66,3 +66,6 @@ test-suite.log
 test-nimf-m17n
 # vscode
 .vscode/
+# PKGBUILD
+pkg/
+nimf-*.pkg.tar.zst

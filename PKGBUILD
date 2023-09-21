@@ -9,7 +9,7 @@
 # https://github.com/hamonikr/nimf
 # https://gitlab.com/3beol/nimf
 pkgname=nimf-3beol
-pkgver=r1056.6e6b4d3
+pkgver=r1058.7d708fc
 pkgrel=1
 pkgdesc="Nimf is a lightweight, fast and extensible input method framework."
 arch=('any')
@@ -19,8 +19,6 @@ depends=(
         'glibc'
         'gtk3'
         'glib2'
-        'libhangul-3beol'
-        'libappindicator-gtk3'
         'libxkbcommon>=0.5.0'
         'libxklavier'
         'qt5-base'
@@ -34,6 +32,10 @@ makedepends=(
         'gtk-update-icon-cache'
         'librsvg'
         'libx11'
+        'libhangul-3beol'
+        'librime'
+        'anthy'
+        'libayatana-appindicator'
         'wayland-protocols'
 )
 conflicts=("nimf" "nimf-git")
