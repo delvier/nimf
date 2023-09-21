@@ -19,6 +19,10 @@ depends=(
         'glibc'
         'gtk3'
         'glib2'
+        'libhangul-3beol'
+        'librime'
+        'anthy'
+        'libayatana-appindicator'
         'libxkbcommon>=0.5.0'
         'libxklavier'
         'qt5-base'
@@ -32,10 +36,6 @@ makedepends=(
         'gtk-update-icon-cache'
         'librsvg'
         'libx11'
-        'libhangul-3beol'
-        'librime'
-        'anthy'
-        'libayatana-appindicator'
         'wayland-protocols'
 )
 conflicts=("nimf" "nimf-git")
